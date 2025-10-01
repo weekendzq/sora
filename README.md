@@ -30,31 +30,31 @@
 
 ### 1. 克隆项目
 
-\`\`\`bash
+```bash
 git clone https://github.com/xianyu110/sora.git
 cd sora
-\`\`\`
+```
 
 ### 2. 安装依赖
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. 配置环境变量
 
-复制 \`.env.example\` 文件并重命名为 \`.env\`：
+复制 `.env.example` 文件并重命名为 `.env`：
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
-编辑 \`.env\` 文件，填入你的 MaynorAPIPro API 密钥：
+编辑 `.env` 文件，填入你的 MaynorAPIPro API 密钥：
 
-\`\`\`env
+```env
 SORA_API_KEY=your-api-key-here
 SORA_BASE_URL=https://apipro.maynor1024.live/
-\`\`\`
+```
 
 **获取 API 密钥：**
 1. 访问 [MaynorAPIPro](https://apipro.maynor1024.live/)
@@ -63,17 +63,17 @@ SORA_BASE_URL=https://apipro.maynor1024.live/
 
 ### 4. 启动应用
 
-\`\`\`bash
+```bash
 npm start
 # 或
 npm run dev
-\`\`\`
+```
 
 应用将在 http://localhost:3000 启动
 
 ## 📁 项目结构
 
-\`\`\`
+```
 sora/
 ├── public/              # 前端静态文件
 │   ├── index.html      # 主页面
@@ -83,7 +83,7 @@ sora/
 ├── package.json        # 项目配置
 ├── .env.example        # 环境变量示例
 └── README.md          # 项目文档
-\`\`\`
+```
 
 ## 🎯 使用说明
 
@@ -105,10 +105,10 @@ sora/
 
 ### 聊天 API
 
-**端点:** \`POST /api/chat/stream\`
+**端点:** `POST /api/chat/stream`
 
 **请求体:**
-\`\`\`json
+```json
 {
   "messages": [
     {
@@ -121,23 +121,23 @@ sora/
     "stream": true
   }
 }
-\`\`\`
+```
 
 **响应:** Server-Sent Events (SSE) 流式数据
 
 ### 视频生成 API
 
-**端点:** \`POST /api/video/generate\`
+**端点:** `POST /api/video/generate`
 
 **请求体:**
-\`\`\`json
+```json
 {
   "prompt": "一只可爱的猫咪在玩球",
   "options": {
     "orientation": "landscape"
   }
 }
-\`\`\`
+```
 
 ## ⚙️ 配置选项
 
@@ -145,9 +145,9 @@ sora/
 
 | 变量名 | 说明 | 默认值 |
 |-------|------|--------|
-| \`SORA_API_KEY\` | MaynorAPIPro API 密钥 | 无 |
-| \`SORA_BASE_URL\` | API 基础 URL | \`https://apipro.maynor1024.live/\` |
-| \`PORT\` | 服务器端口 | \`3000\` |
+| `SORA_API_KEY` | MaynorAPIPro API 密钥 | 无 |
+| `SORA_BASE_URL` | API 基础 URL | `https://apipro.maynor1024.live/` |
+| `PORT` | 服务器端口 | `3000` |
 
 ### Temperature 设置
 
@@ -185,11 +185,11 @@ A:
 
 ### Vercel (推荐)
 
-\`\`\`bash
+```bash
 npm i -g vercel
 vercel login
 vercel
-\`\`\`
+```
 
 ### Railway
 
@@ -206,7 +206,7 @@ vercel
 4. 添加环境变量
 5. 部署
 
-**注意：** 部署时记得设置环境变量 \`SORA_API_KEY\` 和 \`SORA_BASE_URL\`
+**注意：** 部署时记得设置环境变量 `SORA_API_KEY` 和 `SORA_BASE_URL`
 
 ## 📝 开发日志
 
