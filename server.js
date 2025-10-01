@@ -112,8 +112,18 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Sora-2 MVP Server running at http://localhost:${PORT}`);
-  console.log(`📱 Open your browser to start chatting!`);
+// Root route - serve index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// Start server (only for local development)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Sora-2 MVP Server running at http://localhost:${PORT}`);
+    console.log(`📱 Open your browser to start chatting!`);
+  });
+}
+
+// Export for Vercel
+export default app;
